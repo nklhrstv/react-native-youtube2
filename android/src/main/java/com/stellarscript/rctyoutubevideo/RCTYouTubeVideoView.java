@@ -21,6 +21,7 @@ final class RCTYouTubeVideoView extends FrameLayout {
         public void onError(@NonNull final String message) {
             final WritableMap event = Arguments.createMap();
             event.putString(YoutubeVideoEvents.ON_ERROR_MESSAGE_PROP, message);
+            event.putBoolean(YoutubeVideoEvents.ON_ERROR_IS_CRITICAL_PROP, true);
             mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), YoutubeVideoEvents.ON_ERROR_EVENT, event);
         }
 
