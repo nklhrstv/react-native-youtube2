@@ -1,1 +1,3 @@
 /.vscode
+/android/build
+*.iml
