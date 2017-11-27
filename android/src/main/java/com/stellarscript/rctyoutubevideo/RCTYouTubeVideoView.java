@@ -77,14 +77,6 @@ final class RCTYouTubeVideoView extends FrameLayout {
         addView(mVideoView);
     }
 
-    @Override
-    protected void onLayout(final boolean changed, final int left, final int top, final int right, final int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
-        if (changed) {
-           layout(left, top, right, bottom);
-        }
-    }
-
     public void play() {
         mVideoView.play();
     }
