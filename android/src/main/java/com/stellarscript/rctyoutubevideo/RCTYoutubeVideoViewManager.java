@@ -75,7 +75,7 @@ final class RCTYoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideo
                         args.size() > 0 &&
                         !args.isNull(RCTYoutubeVideoProps.SEEK_COMMAND_TIME_ARGUMENT_INDEX) &&
                         args.getType(RCTYoutubeVideoProps.SEEK_COMMAND_TIME_ARGUMENT_INDEX) == ReadableType.Number) {
-                    final int seekTime = args.getInt(RCTYoutubeVideoProps.SEEK_COMMAND_TIME_ARGUMENT_INDEX);
+                    final int seekTime = (int) args.getDouble(RCTYoutubeVideoProps.SEEK_COMMAND_TIME_ARGUMENT_INDEX);
                     videoView.seek(seekTime);
                 }
                 break;
@@ -98,18 +98,22 @@ final class RCTYoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideo
 
         final String sourceUrl = media.getString(RCTYoutubeVideoProps.MEDIA_SOURCE_URL_PROP);
 
-        int startTime = RCTYoutubeVideoProps.MEDIA_START_TIME_DEFAULT_VALUE;
+        final int startTime;
         if (media.hasKey(RCTYoutubeVideoProps.MEDIA_START_TIME_PROP) &&
                 !media.isNull(RCTYoutubeVideoProps.MEDIA_START_TIME_PROP) &&
                 media.getType(RCTYoutubeVideoProps.MEDIA_START_TIME_PROP) == ReadableType.Number) {
-            startTime = media.getInt(RCTYoutubeVideoProps.MEDIA_START_TIME_PROP);
+            startTime = (int) media.getDouble(RCTYoutubeVideoProps.MEDIA_START_TIME_PROP);
+        } else {
+            startTime = RCTYoutubeVideoProps.MEDIA_START_TIME_DEFAULT_VALUE;
         }
 
-        boolean autoplay = RCTYoutubeVideoProps.MEDIA_AUTOPLAY_DEFAULT_VALUE;
+        final boolean autoplay;
         if (media.hasKey(RCTYoutubeVideoProps.MEDIA_AUTOPLAY_PROP) &&
                 !media.isNull(RCTYoutubeVideoProps.MEDIA_AUTOPLAY_PROP) &&
                 media.getType(RCTYoutubeVideoProps.MEDIA_AUTOPLAY_PROP) == ReadableType.Boolean) {
             autoplay = media.getBoolean(RCTYoutubeVideoProps.MEDIA_AUTOPLAY_PROP);
+        } else {
+            autoplay = RCTYoutubeVideoProps.MEDIA_AUTOPLAY_DEFAULT_VALUE;
         }
 
         videoView.loadMedia(sourceUrl, startTime, autoplay);
