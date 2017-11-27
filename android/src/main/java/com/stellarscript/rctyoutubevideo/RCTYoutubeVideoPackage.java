@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public final class YoutubeVideoPackage implements ReactPackage {
+public final class RCTYoutubeVideoPackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(final ReactApplicationContext reactApplicationContext) {
