@@ -1,6 +1,5 @@
 package com.stellarscript.rctyoutubevideo;
 
-import android.support.annotation.NonNull;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
@@ -18,7 +17,7 @@ final class RCTYouTubeVideoView extends FrameLayout {
     private final YouTubeEventListener mEventListener = new YouTubeEventListener() {
 
         @Override
-        public void onError(@NonNull final String message) {
+        public void onError(final String message) {
             final WritableMap event = Arguments.createMap();
             event.putString(RCTYoutubeVideoEvents.ON_ERROR_MESSAGE_PROP, message);
             event.putBoolean(RCTYoutubeVideoEvents.ON_ERROR_IS_CRITICAL_PROP, true);
@@ -67,13 +66,13 @@ final class RCTYouTubeVideoView extends FrameLayout {
 
     };
 
-    public RCTYouTubeVideoView(@NonNull final ThemedReactContext themedReactContext) {
+    public RCTYouTubeVideoView(final ThemedReactContext themedReactContext) {
         super(themedReactContext);
 
         mEventEmitter = themedReactContext.getJSModule(RCTEventEmitter.class);
 
         mVideoView = new YouTubeVideoView(themedReactContext, mEventListener);
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        final ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         mVideoView.setLayoutParams(layoutParams);
         addView(mVideoView);
     }
@@ -82,7 +81,7 @@ final class RCTYouTubeVideoView extends FrameLayout {
     protected void onLayout(final boolean changed, final int left, final int top, final int right, final int bottom) {
         super.onLayout(changed, left, top, right, bottom);
         if (changed) {
-            layout(left, top, right, bottom);
+           layout(left, top, right, bottom);
         }
     }
 
@@ -98,7 +97,7 @@ final class RCTYouTubeVideoView extends FrameLayout {
         mVideoView.seek(time);
     }
 
-    public void loadMedia(@NonNull final String videoId, final int startTime, final boolean autoplay) {
+    public void loadMedia(final String videoId, final int startTime, final boolean autoplay) {
         mVideoView.loadMedia(videoId, startTime, autoplay);
     }
 
