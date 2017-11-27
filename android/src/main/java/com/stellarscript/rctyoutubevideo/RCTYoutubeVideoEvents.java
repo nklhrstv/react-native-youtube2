@@ -1,6 +1,6 @@
 package com.stellarscript.rctyoutubevideo;
 
-final class YoutubeVideoEvents {
+final class RCTYoutubeVideoEvents {
 
     private static final String EVENT_NAME_PREFIX = RCTYouTubeVideoView.class.getSimpleName();
 

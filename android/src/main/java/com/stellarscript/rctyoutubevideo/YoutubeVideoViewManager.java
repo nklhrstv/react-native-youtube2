@@ -40,13 +40,13 @@ final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoVie
     public Map<String, Object> getExportedCustomDirectEventTypeConstants() {
         final Map<String, Object> events = MapBuilder.newHashMap();
 
-        events.put(YoutubeVideoEvents.ON_BUFFERING_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, YoutubeVideoEvents.ON_BUFFERING_EVENT));
-        events.put(YoutubeVideoEvents.ON_PLAYING_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, YoutubeVideoEvents.ON_PLAYING_EVENT));
-        events.put(YoutubeVideoEvents.ON_PAUSED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, YoutubeVideoEvents.ON_PAUSED_EVENT));
-        events.put(YoutubeVideoEvents.ON_END_REACHED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, YoutubeVideoEvents.ON_END_REACHED_EVENT));
-        events.put(YoutubeVideoEvents.ON_ERROR_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, YoutubeVideoEvents.ON_ERROR_EVENT));
-        events.put(YoutubeVideoEvents.ON_TIME_CHANGED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, YoutubeVideoEvents.ON_TIME_CHANGED_EVENT));
-        events.put(YoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, YoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT));
+        events.put(RCTYoutubeVideoEvents.ON_BUFFERING_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_BUFFERING_EVENT));
+        events.put(RCTYoutubeVideoEvents.ON_PLAYING_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_PLAYING_EVENT));
+        events.put(RCTYoutubeVideoEvents.ON_PAUSED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_PAUSED_EVENT));
+        events.put(RCTYoutubeVideoEvents.ON_END_REACHED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_END_REACHED_EVENT));
+        events.put(RCTYoutubeVideoEvents.ON_ERROR_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_ERROR_EVENT));
+        events.put(RCTYoutubeVideoEvents.ON_TIME_CHANGED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_TIME_CHANGED_EVENT));
+        events.put(RCTYoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT));
 
         return events;
     }
@@ -56,13 +56,13 @@ final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoVie
     public Map<String, Object> getExportedViewConstants() {
         final Map<String, Object> constants = MapBuilder.newHashMap();
 
-        constants.put("ON_BUFFERING", YoutubeVideoEvents.ON_BUFFERING_EVENT);
-        constants.put("ON_PLAYING", YoutubeVideoEvents.ON_PLAYING_EVENT);
-        constants.put("ON_PAUSED", YoutubeVideoEvents.ON_PAUSED_EVENT);
-        constants.put("ON_END_REACHED", YoutubeVideoEvents.ON_END_REACHED_EVENT);
-        constants.put("ON_ERROR", YoutubeVideoEvents.ON_ERROR_EVENT);
-        constants.put("ON_TIME_CHANGED", YoutubeVideoEvents.ON_TIME_CHANGED_EVENT);
-        constants.put("ON_SEEK_PERFORMED", YoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT);
+        constants.put("ON_BUFFERING", RCTYoutubeVideoEvents.ON_BUFFERING_EVENT);
+        constants.put("ON_PLAYING", RCTYoutubeVideoEvents.ON_PLAYING_EVENT);
+        constants.put("ON_PAUSED", RCTYoutubeVideoEvents.ON_PAUSED_EVENT);
+        constants.put("ON_END_REACHED", RCTYoutubeVideoEvents.ON_END_REACHED_EVENT);
+        constants.put("ON_ERROR", RCTYoutubeVideoEvents.ON_ERROR_EVENT);
+        constants.put("ON_TIME_CHANGED", RCTYoutubeVideoEvents.ON_TIME_CHANGED_EVENT);
+        constants.put("ON_SEEK_PERFORMED", RCTYoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT);
 
         return constants;
     }

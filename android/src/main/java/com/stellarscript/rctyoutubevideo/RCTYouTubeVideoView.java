@@ -20,45 +20,45 @@ final class RCTYouTubeVideoView extends FrameLayout {
         @Override
         public void onError(@NonNull final String message) {
             final WritableMap event = Arguments.createMap();
-            event.putString(YoutubeVideoEvents.ON_ERROR_MESSAGE_PROP, message);
-            event.putBoolean(YoutubeVideoEvents.ON_ERROR_IS_CRITICAL_PROP, true);
-            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), YoutubeVideoEvents.ON_ERROR_EVENT, event);
+            event.putString(RCTYoutubeVideoEvents.ON_ERROR_MESSAGE_PROP, message);
+            event.putBoolean(RCTYoutubeVideoEvents.ON_ERROR_IS_CRITICAL_PROP, true);
+            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), RCTYoutubeVideoEvents.ON_ERROR_EVENT, event);
         }
 
         @Override
         public void onTimeChanged(final int time) {
             final WritableMap event = Arguments.createMap();
-            event.putInt(YoutubeVideoEvents.ON_TIME_CHANGED_TIME_PROP, time);
-            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), YoutubeVideoEvents.ON_TIME_CHANGED_EVENT, event);
+            event.putInt(RCTYoutubeVideoEvents.ON_TIME_CHANGED_TIME_PROP, time);
+            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), RCTYoutubeVideoEvents.ON_TIME_CHANGED_EVENT, event);
         }
 
         @Override
         public void onEndReached() {
-            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), YoutubeVideoEvents.ON_END_REACHED_EVENT, null);
+            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), RCTYoutubeVideoEvents.ON_END_REACHED_EVENT, null);
         }
 
         @Override
         public void onPlaying(final int duration) {
             final WritableMap event = Arguments.createMap();
-            event.putInt(YoutubeVideoEvents.ON_PLAYING_DURATION_PROP, duration);
-            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), YoutubeVideoEvents.ON_PLAYING_EVENT, event);
+            event.putInt(RCTYoutubeVideoEvents.ON_PLAYING_DURATION_PROP, duration);
+            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), RCTYoutubeVideoEvents.ON_PLAYING_EVENT, event);
         }
 
         @Override
         public void onPaused() {
-            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), YoutubeVideoEvents.ON_PAUSED_EVENT, null);
+            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), RCTYoutubeVideoEvents.ON_PAUSED_EVENT, null);
         }
 
         @Override
         public void onSeekPerformed() {
-            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), YoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT, null);
+            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), RCTYoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT, null);
         }
 
         @Override
         public void onBuffering(final int buffering) {
             final WritableMap event = Arguments.createMap();
-            event.putInt(YoutubeVideoEvents.ON_BUFFERING_BUFFERING_PROP, buffering);
-            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), YoutubeVideoEvents.ON_BUFFERING_EVENT, event);
+            event.putInt(RCTYoutubeVideoEvents.ON_BUFFERING_BUFFERING_PROP, buffering);
+            mEventEmitter.receiveEvent(RCTYouTubeVideoView.this.getId(), RCTYoutubeVideoEvents.ON_BUFFERING_EVENT, event);
         }
 
         @Override
