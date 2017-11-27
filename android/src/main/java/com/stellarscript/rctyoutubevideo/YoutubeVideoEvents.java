@@ -1,7 +1,5 @@
 package com.stellarscript.rctyoutubevideo;
 
-import android.support.annotation.NonNull;
-
 final class YoutubeVideoEvents {
 
     private static final String EVENT_NAME_PREFIX = RCTYouTubeVideoView.class.getSimpleName();
@@ -20,7 +18,7 @@ final class YoutubeVideoEvents {
     static final String ON_PLAYING_DURATION_PROP = "duration";
     static final String ON_BUFFERING_BUFFERING_PROP = "buffering";
 
-    private static String getFullEventName(@NonNull final String eventName) {
+    private static String getFullEventName(final String eventName) {
         return EVENT_NAME_PREFIX.concat(eventName);
     }
 
