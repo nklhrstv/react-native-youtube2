@@ -1,7 +1,5 @@
 package com.stellarscript.rctyoutubevideo;
 
-import android.support.annotation.NonNull;
-
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
@@ -15,7 +13,7 @@ import java.util.List;
 public final class YoutubeVideoPackage implements ReactPackage {
 
     @Override
-    public List<NativeModule> createNativeModules(@NonNull final ReactApplicationContext reactApplicationContext) {
+    public List<NativeModule> createNativeModules(final ReactApplicationContext reactApplicationContext) {
         return Collections.emptyList();
     }
 
@@ -25,7 +23,7 @@ public final class YoutubeVideoPackage implements ReactPackage {
     }
 
     @Override
-    public List<ViewManager> createViewManagers(@NonNull final ReactApplicationContext reactApplicationContext) {
+    public List<ViewManager> createViewManagers(final ReactApplicationContext reactApplicationContext) {
         return Arrays.<ViewManager>asList(new YoutubeVideoViewManager());
     }
 
