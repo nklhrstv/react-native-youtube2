@@ -73,8 +73,7 @@ final class RCTYouTubeVideoView extends FrameLayout {
 
         mVideoView = new YouTubeVideoView(themedReactContext, mEventListener);
         final ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        mVideoView.setLayoutParams(layoutParams);
-        addView(mVideoView);
+        addView(mVideoView, layoutParams);
     }
 
     public void play() {
