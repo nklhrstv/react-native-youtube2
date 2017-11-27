@@ -1,8 +1,5 @@
 package com.stellarscript.rctyoutubevideo;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableType;
@@ -24,7 +21,6 @@ final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoVie
     }
 
     @Override
-    @Nullable
     public Map<String, Integer> getCommandsMap() {
         final Map<String, Integer> commands = MapBuilder.newHashMap();
 
@@ -36,7 +32,6 @@ final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoVie
     }
 
     @Override
-    @Nullable
     public Map<String, Object> getExportedCustomDirectEventTypeConstants() {
         final Map<String, Object> events = MapBuilder.newHashMap();
 
@@ -51,7 +46,6 @@ final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoVie
         return events;
     }
 
-    @Nullable
     @Override
     public Map<String, Object> getExportedViewConstants() {
         final Map<String, Object> constants = MapBuilder.newHashMap();
@@ -68,7 +62,7 @@ final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoVie
     }
 
     @Override
-    public void receiveCommand(@NonNull final RCTYouTubeVideoView videoView, final int commandId, @Nullable final ReadableArray args) {
+    public void receiveCommand(final RCTYouTubeVideoView videoView, final int commandId, final ReadableArray args) {
         switch (commandId) {
             case RCTYoutubeVideoProps.PLAY_COMMAND_ID:
                 videoView.play();
@@ -89,12 +83,12 @@ final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoVie
     }
 
     @Override
-    protected RCTYouTubeVideoView createViewInstance(@NonNull final ThemedReactContext themedReactContext) {
+    protected RCTYouTubeVideoView createViewInstance(final ThemedReactContext themedReactContext) {
         return new RCTYouTubeVideoView(themedReactContext);
     }
 
     @ReactProp(name = RCTYoutubeVideoProps.MEDIA_PROP)
-    public void loadMedia(@NonNull final RCTYouTubeVideoView videoView, @Nullable final ReadableMap media) {
+    public void loadMedia(final RCTYouTubeVideoView videoView, final ReadableMap media) {
         if (media == null ||
                 !media.hasKey(RCTYoutubeVideoProps.MEDIA_SOURCE_URL_PROP) ||
                 media.isNull(RCTYoutubeVideoProps.MEDIA_SOURCE_URL_PROP) ||
