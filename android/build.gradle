@@ -21,6 +21,6 @@ android {
 }
 
 dependencies {
-    compile "com.github.NikolaBorislavovHristov:android-youtube-video-view:2.0.0-rc1"
+    compile "com.github.NikolaBorislavovHristov:android-youtube-video-view:2.0.0"
     compile "com.facebook.react:react-native:+" // from node_modules
 }
