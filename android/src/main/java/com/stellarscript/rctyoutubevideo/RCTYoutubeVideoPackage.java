@@ -24,7 +24,7 @@ public final class RCTYoutubeVideoPackage implements ReactPackage {
 
     @Override
     public List<ViewManager> createViewManagers(final ReactApplicationContext reactApplicationContext) {
-        return Arrays.<ViewManager>asList(new YoutubeVideoViewManager());
+        return Arrays.<ViewManager>asList(new RCTYoutubeVideoViewManager());
     }
 
 }

@@ -10,7 +10,7 @@ import com.facebook.react.uimanager.annotations.ReactProp;
 
 import java.util.Map;
 
-final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoView> {
+final class RCTYoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoView> {
 
     private static final String REACT_CLASS = RCTYouTubeVideoView.class.getSimpleName();
     private static final String REACT_REGISTRATION_NAME = "registrationName";
