@@ -28,9 +28,9 @@ final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoVie
     public Map<String, Integer> getCommandsMap() {
         final Map<String, Integer> commands = MapBuilder.newHashMap();
 
-        commands.put(YoutubeVideoProps.PLAY_COMMAND_NAME, YoutubeVideoProps.PLAY_COMMAND_ID);
-        commands.put(YoutubeVideoProps.PAUSE_COMMAND_NAME, YoutubeVideoProps.PAUSE_COMMAND_ID);
-        commands.put(YoutubeVideoProps.SEEK_COMMAND_NAME, YoutubeVideoProps.SEEK_COMMAND_ID);
+        commands.put(RCTYoutubeVideoProps.PLAY_COMMAND_NAME, RCTYoutubeVideoProps.PLAY_COMMAND_ID);
+        commands.put(RCTYoutubeVideoProps.PAUSE_COMMAND_NAME, RCTYoutubeVideoProps.PAUSE_COMMAND_ID);
+        commands.put(RCTYoutubeVideoProps.SEEK_COMMAND_NAME, RCTYoutubeVideoProps.SEEK_COMMAND_ID);
 
         return commands;
     }
@@ -70,18 +70,18 @@ final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoVie
     @Override
     public void receiveCommand(@NonNull final RCTYouTubeVideoView videoView, final int commandId, @Nullable final ReadableArray args) {
         switch (commandId) {
-            case YoutubeVideoProps.PLAY_COMMAND_ID:
+            case RCTYoutubeVideoProps.PLAY_COMMAND_ID:
                 videoView.play();
                 break;
-            case YoutubeVideoProps.PAUSE_COMMAND_ID:
+            case RCTYoutubeVideoProps.PAUSE_COMMAND_ID:
                 videoView.pause();
                 break;
-            case YoutubeVideoProps.SEEK_COMMAND_ID:
+            case RCTYoutubeVideoProps.SEEK_COMMAND_ID:
                 if (args != null &&
                         args.size() > 0 &&
-                        !args.isNull(YoutubeVideoProps.SEEK_COMMAND_TIME_ARGUMENT_INDEX) &&
-                        args.getType(YoutubeVideoProps.SEEK_COMMAND_TIME_ARGUMENT_INDEX) == ReadableType.Number) {
-                    final int seekTime = args.getInt(YoutubeVideoProps.SEEK_COMMAND_TIME_ARGUMENT_INDEX);
+                        !args.isNull(RCTYoutubeVideoProps.SEEK_COMMAND_TIME_ARGUMENT_INDEX) &&
+                        args.getType(RCTYoutubeVideoProps.SEEK_COMMAND_TIME_ARGUMENT_INDEX) == ReadableType.Number) {
+                    final int seekTime = args.getInt(RCTYoutubeVideoProps.SEEK_COMMAND_TIME_ARGUMENT_INDEX);
                     videoView.seek(seekTime);
                 }
                 break;
@@ -93,29 +93,29 @@ final class YoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideoVie
         return new RCTYouTubeVideoView(themedReactContext);
     }
 
-    @ReactProp(name = YoutubeVideoProps.MEDIA_PROP)
+    @ReactProp(name = RCTYoutubeVideoProps.MEDIA_PROP)
     public void loadMedia(@NonNull final RCTYouTubeVideoView videoView, @Nullable final ReadableMap media) {
         if (media == null ||
-                !media.hasKey(YoutubeVideoProps.MEDIA_SOURCE_URL_PROP) ||
-                media.isNull(YoutubeVideoProps.MEDIA_SOURCE_URL_PROP) ||
-                media.getType(YoutubeVideoProps.MEDIA_SOURCE_URL_PROP) != ReadableType.String) {
+                !media.hasKey(RCTYoutubeVideoProps.MEDIA_SOURCE_URL_PROP) ||
+                media.isNull(RCTYoutubeVideoProps.MEDIA_SOURCE_URL_PROP) ||
+                media.getType(RCTYoutubeVideoProps.MEDIA_SOURCE_URL_PROP) != ReadableType.String) {
             return;
         }
 
-        final String sourceUrl = media.getString(YoutubeVideoProps.MEDIA_SOURCE_URL_PROP);
+        final String sourceUrl = media.getString(RCTYoutubeVideoProps.MEDIA_SOURCE_URL_PROP);
 
-        int startTime = YoutubeVideoProps.MEDIA_START_TIME_DEFAULT_VALUE;
-        if (media.hasKey(YoutubeVideoProps.MEDIA_START_TIME_PROP) &&
-                !media.isNull(YoutubeVideoProps.MEDIA_START_TIME_PROP) &&
-                media.getType(YoutubeVideoProps.MEDIA_START_TIME_PROP) == ReadableType.Number) {
-            startTime = media.getInt(YoutubeVideoProps.MEDIA_START_TIME_PROP);
+        int startTime = RCTYoutubeVideoProps.MEDIA_START_TIME_DEFAULT_VALUE;
+        if (media.hasKey(RCTYoutubeVideoProps.MEDIA_START_TIME_PROP) &&
+                !media.isNull(RCTYoutubeVideoProps.MEDIA_START_TIME_PROP) &&
+                media.getType(RCTYoutubeVideoProps.MEDIA_START_TIME_PROP) == ReadableType.Number) {
+            startTime = media.getInt(RCTYoutubeVideoProps.MEDIA_START_TIME_PROP);
         }
 
-        boolean autoplay = YoutubeVideoProps.MEDIA_AUTOPLAY_DEFAULT_VALUE;
-        if (media.hasKey(YoutubeVideoProps.MEDIA_AUTOPLAY_PROP) &&
-                !media.isNull(YoutubeVideoProps.MEDIA_AUTOPLAY_PROP) &&
-                media.getType(YoutubeVideoProps.MEDIA_AUTOPLAY_PROP) == ReadableType.Boolean) {
-            autoplay = media.getBoolean(YoutubeVideoProps.MEDIA_AUTOPLAY_PROP);
+        boolean autoplay = RCTYoutubeVideoProps.MEDIA_AUTOPLAY_DEFAULT_VALUE;
+        if (media.hasKey(RCTYoutubeVideoProps.MEDIA_AUTOPLAY_PROP) &&
+                !media.isNull(RCTYoutubeVideoProps.MEDIA_AUTOPLAY_PROP) &&
+                media.getType(RCTYoutubeVideoProps.MEDIA_AUTOPLAY_PROP) == ReadableType.Boolean) {
+            autoplay = media.getBoolean(RCTYoutubeVideoProps.MEDIA_AUTOPLAY_PROP);
         }
 
         videoView.loadMedia(sourceUrl, startTime, autoplay);

@@ -1,6 +1,6 @@
 package com.stellarscript.rctyoutubevideo;
 
-final class YoutubeVideoProps {
+final class RCTYoutubeVideoProps {
 
     static final String MEDIA_PROP = "media";
     static final String MEDIA_SOURCE_URL_PROP = "sourceUrl";
