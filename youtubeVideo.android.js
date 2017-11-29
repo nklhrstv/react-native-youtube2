@@ -16,7 +16,8 @@ class YouTubeVideo extends Component {
             [RCTYouTubeVideoViewConstants.ON_END_REACHED]: this._invokeEventCallback.bind(this, 'onEndReached'),
             [RCTYouTubeVideoViewConstants.ON_ERROR]: this._invokeEventCallback.bind(this, 'onError'),
             [RCTYouTubeVideoViewConstants.ON_TIME_CHANGED]: this._invokeEventCallback.bind(this, 'onTimeChanged'),
-            [RCTYouTubeVideoViewConstants.ON_SEEK_PERFORMED]: this._invokeEventCallback.bind(this, 'onSeekPerformed')
+            [RCTYouTubeVideoViewConstants.ON_SEEK_PERFORMED]: this._invokeEventCallback.bind(this, 'onSeekPerformed'),
+            [RCTYouTubeVideoViewConstants.ON_SEEK_REQUESTED]: this._invokeEventCallback.bind(this, 'onSeekRequested')
         };
     }
 
@@ -100,7 +101,8 @@ YouTubeVideo.propTypes = {
     onEndReached: PropTypes.func,
     onError: PropTypes.func,
     onTimeChanged: PropTypes.func,
-    onSeekPerformed: PropTypes.func
+    onSeekPerformed: PropTypes.func,
+    onSeekRequested: PropTypes.func
 };
 
 YouTubeVideo.defaultProps = {
@@ -121,7 +123,8 @@ const RCTYouTubeVideoViewInterface = {
         [RCTYouTubeVideoViewConstants.ON_END_REACHED]: PropTypes.func,
         [RCTYouTubeVideoViewConstants.ON_ERROR]: PropTypes.func,
         [RCTYouTubeVideoViewConstants.ON_TIME_CHANGED]: PropTypes.func,
-        [RCTYouTubeVideoViewConstants.ON_SEEK_PERFORMED]: PropTypes.func
+        [RCTYouTubeVideoViewConstants.ON_SEEK_PERFORMED]: PropTypes.func,
+        [RCTYouTubeVideoViewConstants.ON_SEEK_REQUESTED]: PropTypes.func
     }
 };
 
