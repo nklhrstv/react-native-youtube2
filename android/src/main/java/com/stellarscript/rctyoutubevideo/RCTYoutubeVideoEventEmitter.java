@@ -54,6 +54,13 @@ final class RCTYoutubeVideoEventEmitter implements YouTubeEventListener {
     }
 
     @Override
+    public void onSeekRequested(final int time) {
+        final WritableMap event = Arguments.createMap();
+        event.putInt(RCTYoutubeVideoEvents.ON_SEEK_REQUESTED_TIME_PROP, time);
+        mEventEmitter.receiveEvent(mVideoView.getId(), RCTYoutubeVideoEvents.ON_SEEK_REQUESTED_EVENT, event);
+    }
+
+    @Override
     public void onBuffering(final int buffering) {
         final WritableMap event = Arguments.createMap();
         event.putInt(RCTYoutubeVideoEvents.ON_BUFFERING_BUFFERING_PROP, buffering);

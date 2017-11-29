@@ -41,6 +41,7 @@ final class RCTYoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideo
         events.put(RCTYoutubeVideoEvents.ON_END_REACHED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_END_REACHED_EVENT));
         events.put(RCTYoutubeVideoEvents.ON_ERROR_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_ERROR_EVENT));
         events.put(RCTYoutubeVideoEvents.ON_TIME_CHANGED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_TIME_CHANGED_EVENT));
+        events.put(RCTYoutubeVideoEvents.ON_SEEK_REQUESTED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_SEEK_REQUESTED_EVENT));
         events.put(RCTYoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT, MapBuilder.of(REACT_REGISTRATION_NAME, RCTYoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT));
 
         return events;
@@ -56,6 +57,7 @@ final class RCTYoutubeVideoViewManager extends SimpleViewManager<RCTYouTubeVideo
         constants.put("ON_END_REACHED", RCTYoutubeVideoEvents.ON_END_REACHED_EVENT);
         constants.put("ON_ERROR", RCTYoutubeVideoEvents.ON_ERROR_EVENT);
         constants.put("ON_TIME_CHANGED", RCTYoutubeVideoEvents.ON_TIME_CHANGED_EVENT);
+        constants.put("ON_SEEK_REQUESTED", RCTYoutubeVideoEvents.ON_SEEK_REQUESTED_EVENT);
         constants.put("ON_SEEK_PERFORMED", RCTYoutubeVideoEvents.ON_SEEK_PERFORMED_EVENT);
 
         return constants;

@@ -10,6 +10,7 @@ final class RCTYoutubeVideoEvents {
     static final String ON_END_REACHED_EVENT = getFullEventName("onEndReached");
     static final String ON_ERROR_EVENT = getFullEventName("onError");
     static final String ON_TIME_CHANGED_EVENT = getFullEventName("onTimeChanged");
+    static final String ON_SEEK_REQUESTED_EVENT = getFullEventName("onSeekRequested");
     static final String ON_SEEK_PERFORMED_EVENT = getFullEventName("onSeekPerformed");
 
     static final String ON_ERROR_MESSAGE_PROP = "message";
@@ -17,6 +18,7 @@ final class RCTYoutubeVideoEvents {
     static final String ON_TIME_CHANGED_TIME_PROP = "time";
     static final String ON_PLAYING_DURATION_PROP = "duration";
     static final String ON_BUFFERING_BUFFERING_PROP = "buffering";
+    static final String ON_SEEK_REQUESTED_TIME_PROP = "time";
 
     private static String getFullEventName(final String eventName) {
         return EVENT_NAME_PREFIX.concat(eventName);
